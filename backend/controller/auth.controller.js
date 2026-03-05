@@ -76,13 +76,13 @@ export const Login = async(req,res)=>{
         const accessToken = jwt.sign(
             { userId: user._id, email:user.email },
             process.env.JWT_SECRET,
-            { expiresIn: "1m" }
+            { expiresIn: "15m" }
         )
 
         const refreshToken = jwt.sign(
             { userId: user._id, email: user.email },
             process.env.JWT_SECRET,
-            { expiresIn: "7d" }
+            { expiresIn: "30min" }
         )
 
         res.cookie("refreshToken", refreshToken, {
@@ -136,7 +136,7 @@ export const refreshToken = (req, res) => {
         const newAccessToken = jwt.sign(
             { id: decoded.id },
             process.env.JWT_SECRET,
-            { expiresIn: "1m" }
+            { expiresIn: "15m" }
         );
 
         return res.json({
