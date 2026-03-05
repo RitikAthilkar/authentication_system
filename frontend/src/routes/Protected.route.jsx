@@ -1,6 +1,6 @@
 import React from 'react'
 import { useAuth } from '../../global/authContext'
-
+import { Navigate } from "react-router-dom"
 const ProtectedRoute = ({children}) => {
 
     const { isAuth, loading } = useAuth()
@@ -8,7 +8,7 @@ const ProtectedRoute = ({children}) => {
     if (loading) return <div>Loading...</div>
 
     if (!isAuth) {
-        return <Navigate to="/login" replace />
+        return <Navigate to="/" replace />
     }
 
 

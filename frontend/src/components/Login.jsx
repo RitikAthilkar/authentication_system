@@ -25,7 +25,7 @@ const Login = ({handleClick}) => {
                 alert(res.data?.message)
                 localStorage.setItem('accessToken', res.data.accessToken)
                 await checkAuth();
-                navigate('/')
+                navigate('/dashboard')
             }
         } catch (error) {
             alert(`${error.response?.data?.message} !`)
