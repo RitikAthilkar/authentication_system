@@ -16,4 +16,6 @@ route.get("/auth/profile", verifyToken, (req, res) => {
     })
 })
 
+
+
 export default route
