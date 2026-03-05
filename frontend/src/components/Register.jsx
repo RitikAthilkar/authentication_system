@@ -19,7 +19,7 @@ const Register = ({ handleClick }) => {
             const res = await axios.post(`${import.meta.env.VITE_SERVER_URL}/auth/register`, form)
             if (res.data.status === 200) {
                 alert(res.data?.message)
-                navigate('/')
+                handleClick();
             } else {
                 alert(res.data?.message)
             }
