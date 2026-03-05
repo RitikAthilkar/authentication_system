@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended:true}))
 app.use(cors({
-    origin: process.env.CLIENT_BASE_URL,
+    origin: "https://zygobiteauthsystem.vercel.app",
     credentials:true
 }))
 app.use(cookieParser())
