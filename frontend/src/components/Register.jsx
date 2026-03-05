@@ -22,6 +22,7 @@ const Register = ({ handleClick }) => {
                 handleClick();
             } else {
                 alert(res.data?.message)
+                handleClick();
             }
         } catch (error) {
             alert(`${error.response?.data?.message} !`)
